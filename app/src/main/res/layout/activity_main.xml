@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:id="@+id/ll_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+            <TextView
+                android:id="@+id/tv_oval_solid"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆形-填充"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_oval_line"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆形-边框"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_oval_dash_line"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆形-虚线"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_rect_solid_radius"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆角-填充"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_line_radius"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆角-边框"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_dash_line_radius"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="圆角-虚线"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_rect_solid"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="圆角-填充"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+            <TextView
+                android:id="@+id/tv_rect_line"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="圆角-边框"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_selector_background"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="触摸背景变色"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+            <Button
+                android:id="@+id/btn_selector_background_color"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="触摸背景和字体变色"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_rect_top_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="上圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_bottom_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="下圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_rect_diagonal1"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="斜对角圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_diagonal2"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="斜对角圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_rect_tl_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="左上圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_tr_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="右上圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_rect_bl_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="左下圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_rect_br_radius"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="右下圆角"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_gradient_linear_tb"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="线性渐变-上下"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_gradient_linear_bt"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="线性渐变-下上"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_gradient_linear_lr"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="线性渐变-左右"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+            <TextView
+                android:id="@+id/tv_gradient_linear_rl"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="线性渐变-右左"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_gradient_sweep"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:text="扫描渐变"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tv_gradient_radial"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="50dp"
+                android:gravity="center"
+                android:text="辐射渐变"
+                android:textColor="#000"
+                android:textSize="10sp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+
