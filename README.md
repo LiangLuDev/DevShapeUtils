@@ -95,7 +95,7 @@ DevShapeUtils
         .into(view);
 ```
 ### 3、意见反馈
-如果遇到问题或者好的建议，请反馈到：issue、927195249@qq.com 或者LiangLuDev@gmail.com@gmail.com
+如果遇到问题或者好的建议，请反馈到：issue、927195249@qq.com 或者LiangLuDev@gmail.com
 
 如果觉得对你有用的话，点一下右上的星星赞一下吧!
 
