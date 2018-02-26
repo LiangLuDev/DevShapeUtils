@@ -8,7 +8,7 @@
 #### 效果预览：
   ![Alt text](./DevShapeUtils.jpg)
 
-###2、如何使用
+### 2、如何使用
 -------------------
 #### 2.1 Android Studio导入方法，添加Gradle依赖
 先在项目根目录的 build.gradle 的 repositories 添加:
@@ -49,9 +49,9 @@ android {
 }
 ```
 ##### 2.2.2 代码中使用
-- **样式设置：① into（view）**--直接设置到相应的view
-&emsp;&emsp;&emsp;&emsp; **② build()**--返回Drawable对象
-- **颜色设置：**所有的颜色设置均可使用**R.color.xxx**&emsp;或者&emsp;**#FFFFFF**
+- **样式设置：① DevShapeUtils.xxx.into（view）**--直接设置到相应的view
+&emsp;&emsp;&emsp;&emsp; **② DevShapeUtils.xxx.build()**--返回Drawable对象
+- **颜色设置：**所有的颜色设置均可使用&emsp;**R.color.xxx**&emsp;或者&emsp;**#FFFFFF**
 ###### 2.2.2.1 Shape样式设置
 ``` java
 //椭圆
