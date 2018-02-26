@@ -8,7 +8,7 @@ import android.support.annotation.ColorRes;
 import android.view.View;
 import android.widget.TextView;
 
-import com.luliang.shapeutils.ShapeUtils;
+import com.luliang.shapeutils.DevShapeUtils;
 import com.luliang.shapeutils.interfaces.IDevUtils;
 
 
@@ -61,7 +61,7 @@ public class DrawableSelector implements IDevUtils<Drawable, View> {
      */
     public DrawableSelector selectorColor(@ColorRes int pressedColorResId, @ColorRes int normalColorResId) {
         mColorStateList = ColorSelector.getInstance()
-                .selectorColor(ShapeUtils.getContext().getResources().getColor(pressedColorResId), ShapeUtils.getContext().getResources().getColor(normalColorResId))
+                .selectorColor(DevShapeUtils.getContext().getResources().getColor(pressedColorResId), DevShapeUtils.getContext().getResources().getColor(normalColorResId))
                 .build();
         this.isSelectorColor = true;
         return this;

@@ -21,23 +21,23 @@ import com.luliang.shapeutils.shape.DevShape;
  * @github https://github.com/LiangLuDev
  */
 
-public class ShapeUtils {
+public class DevShapeUtils {
 
     @SuppressLint("StaticFieldLeak")
-    private static ShapeUtils shapeUtils;
+    private static DevShapeUtils devShapeUtils;
     @SuppressLint("StaticFieldLeak")
     private static Application context;
 
-    public static ShapeUtils getInstance() {
+    public static DevShapeUtils getInstance() {
         initialize();
-        if (shapeUtils == null) {
-            synchronized (ShapeUtils.class) {
-                if (shapeUtils == null) {
-                    shapeUtils = new ShapeUtils();
+        if (devShapeUtils == null) {
+            synchronized (DevShapeUtils.class) {
+                if (devShapeUtils == null) {
+                    devShapeUtils = new DevShapeUtils();
                 }
             }
         }
-        return shapeUtils;
+        return devShapeUtils;
     }
 
 
@@ -64,7 +64,7 @@ public class ShapeUtils {
      */
     private static void initialize() {
         if (context == null) {
-            throw new ExceptionInInitializerError("请先在全局Application中调用 ShapeUtils.init() 初始化！");
+            throw new ExceptionInInitializerError("请先在全局Application中调用 DevShapeUtils.init() 初始化！");
         }
     }
 
@@ -86,7 +86,7 @@ public class ShapeUtils {
      * @return DrawableSelector
      */
     public static DrawableSelector selectorBackground(@ColorRes int pressedColorResId, @ColorRes int normalColorResId) {
-        return DrawableSelector.getInstance().selectorBackground(new ColorDrawable(ShapeUtils.getContext().getResources().getColor(pressedColorResId)), new ColorDrawable(ShapeUtils.getContext().getResources().getColor(normalColorResId)));
+        return DrawableSelector.getInstance().selectorBackground(new ColorDrawable(DevShapeUtils.getContext().getResources().getColor(pressedColorResId)), new ColorDrawable(DevShapeUtils.getContext().getResources().getColor(normalColorResId)));
     }
 
     /**
@@ -123,7 +123,7 @@ public class ShapeUtils {
      */
     public static ColorSelector selectorColor(@ColorRes int pressedColorResId, @ColorRes int normalColorResId) {
         return ColorSelector.getInstance()
-                .selectorColor(ShapeUtils.getContext().getResources().getColor(pressedColorResId), ShapeUtils.getContext().getResources().getColor(normalColorResId));
+                .selectorColor(DevShapeUtils.getContext().getResources().getColor(pressedColorResId), DevShapeUtils.getContext().getResources().getColor(normalColorResId));
     }
 
 

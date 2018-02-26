@@ -2,7 +2,7 @@ package com.luliang.devshapeutils;
 
 import android.app.Application;
 
-import com.luliang.shapeutils.ShapeUtils;
+import com.luliang.shapeutils.DevShapeUtils;
 
 /**
  * Created by LuLiang on 2018/2/26.
@@ -18,6 +18,6 @@ public class DevApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        ShapeUtils.init(this);
+        DevShapeUtils.init(this);
     }
 }

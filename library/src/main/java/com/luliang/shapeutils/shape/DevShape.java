@@ -8,7 +8,7 @@ import android.support.annotation.IntDef;
 import android.support.annotation.StringDef;
 import android.view.View;
 
-import com.luliang.shapeutils.ShapeUtils;
+import com.luliang.shapeutils.DevShapeUtils;
 import com.luliang.shapeutils.interfaces.IDevUtils;
 
 import java.lang.annotation.Retention;
@@ -131,7 +131,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
      */
     public DevShape solid(@ColorRes int backgroundColorResId) {
         this.isBackgroundColor = true;
-        this.backgroundColor = ShapeUtils.getContext().getResources().getColor(backgroundColorResId);
+        this.backgroundColor = DevShapeUtils.getContext().getResources().getColor(backgroundColorResId);
         return this;
     }
 
@@ -158,7 +158,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
     public DevShape line(int lineWidth, @ColorRes int lineColorResId) {
         this.isLine = true;
         this.lineWidth = lineWidth;
-        this.lineColor = ShapeUtils.getContext().getResources().getColor(lineColorResId);
+        this.lineColor = DevShapeUtils.getContext().getResources().getColor(lineColorResId);
         return this;
     }
 
@@ -191,7 +191,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
         this.dashLineWidth = dashLineWidth;
         this.dashWidth = dashWidth;
         this.dashGap = dashGap;
-        this.dashLineColor = ShapeUtils.getContext().getResources().getColor(dashLineColorResId);
+        this.dashLineColor = DevShapeUtils.getContext().getResources().getColor(dashLineColorResId);
         return this;
     }
 
@@ -226,8 +226,8 @@ public class DevShape implements IDevUtils<Drawable, View> {
     public DevShape gradient(@ColorRes int startColor, @ColorRes int endColor) {
         this.isGradient = true;
         this.gradientColors = new int[2];
-        this.gradientColors[0] = ShapeUtils.getContext().getResources().getColor(startColor);
-        this.gradientColors[1] = ShapeUtils.getContext().getResources().getColor(endColor);
+        this.gradientColors[0] = DevShapeUtils.getContext().getResources().getColor(startColor);
+        this.gradientColors[1] = DevShapeUtils.getContext().getResources().getColor(endColor);
         this.gradientType = GradientDrawable.LINEAR_GRADIENT;
         this.gradientOrientation = TOP_BOTTOM;
         return this;
@@ -267,7 +267,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
         if (gradientColorsResId.length > 1) {
             this.gradientColors = new int[gradientColorsResId.length];
             for (int i = 0; i < gradientColorsResId.length; i++) {
-                this.gradientColors[i] = ShapeUtils.getContext().getResources().getColor(gradientColorsResId[i]);
+                this.gradientColors[i] = DevShapeUtils.getContext().getResources().getColor(gradientColorsResId[i]);
             }
         } else {
             throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
@@ -313,7 +313,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
         if (gradientColorsResId.length > 1) {
             this.gradientColors = new int[gradientColorsResId.length];
             for (int i = 0; i < gradientColorsResId.length; i++) {
-                this.gradientColors[i] = ShapeUtils.getContext().getResources().getColor(gradientColorsResId[i]);
+                this.gradientColors[i] = DevShapeUtils.getContext().getResources().getColor(gradientColorsResId[i]);
             }
         } else {
             throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
@@ -357,7 +357,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
         if (gradientColors.length > 1) {
             this.gradientColors = new int[gradientColors.length];
             for (int i = 0; i < gradientColors.length; i++) {
-                this.gradientColors[i] = ShapeUtils.getContext().getResources().getColor(gradientColors[i]);
+                this.gradientColors[i] = DevShapeUtils.getContext().getResources().getColor(gradientColors[i]);
             }
         } else {
             throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
@@ -400,7 +400,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
         if (gradientColors.length > 1) {
             this.gradientColors = new int[gradientColors.length];
             for (int i = 0; i < gradientColors.length; i++) {
-                this.gradientColors[i] = ShapeUtils.getContext().getResources().getColor(gradientColors[i]);
+                this.gradientColors[i] = DevShapeUtils.getContext().getResources().getColor(gradientColors[i]);
             }
         } else {
             throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
@@ -604,7 +604,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
      * @return 返回值
      */
     private int dip2px(float dipValue) {
-        final float scale = ShapeUtils.getContext().getResources().getDisplayMetrics().density;
+        final float scale = DevShapeUtils.getContext().getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }
 
