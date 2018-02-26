@@ -49,8 +49,8 @@ android {
 }
 ```
 ##### 2.2.2 代码中使用
-- **样式设置：① DevShapeUtils.xxx.into（view）**--直接设置到相应的view
-&emsp;&emsp;&emsp;&emsp; **② DevShapeUtils.xxx.build()**--返回Drawable对象
+- **样式设置：<br />① DevShapeUtils.xxx.into（view）**--直接设置到相应的view
+<br />**② DevShapeUtils.xxx.build()**--返回Drawable对象
 - **颜色设置：**所有的颜色设置均可使用&emsp;**R.color.xxx**&emsp;或者&emsp;**#FFFFFF**
 ###### 2.2.2.1 Shape样式设置
 ``` java
