@@ -1,10 +1,10 @@
 #DevShapeUtils
 
-> **项目初衷：**公司项目样式文件n+1个，多人开发文件命名各种各样，每次都要搜索半天，我也在网上看了很多类似样式设置库，大多数都是自定义View，我只想代码直接设置样式，比较方便一点，就在闲暇时间写了这个项目，代码直接设置样式，没有太多的属性需要设置，使用简单、为了更方便、快捷、省时的项目开发。
+> **项目初衷：** 公司项目样式文件n+1个，多人开发文件命名各种各样，每次都要搜索半天，我也在网上看了很多类似样式设置库，大多数都是自定义View，我只想代码直接设置样式，比较方便一点，就在闲暇时间写了这个项目，代码直接设置样式，没有太多的属性需要设置，使用简单、为了更方便、快捷、省时的项目开发。
 ### 1、功能介绍
 -------------------
-- **Shape样式：**圆形、圆角、边框、虚线边框、颜色渐变
-- **Selector样式：**触摸背景变化、触摸字体颜色变化
+- **Shape样式：** 圆形、圆角、边框、虚线边框、颜色渐变
+- **Selector样式：** 触摸背景变化、触摸字体颜色变化
 #### 效果预览：
   ![Alt text](./DevShapeUtils.jpg)
 
@@ -40,7 +40,7 @@ android {
 ```
 ##### 2.2.1 在项目Application中初始化
 ``` java
-	public class DevApplication extends Application {
+public class DevApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
