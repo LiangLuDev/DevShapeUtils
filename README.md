@@ -5,8 +5,7 @@
 -------------------
 - **Shape样式：** 圆形、圆角、边框、虚线边框、颜色渐变
 - **Selector样式：** 触摸背景变化、触摸字体颜色变化
-#### 效果预览：
-  ![Alt text](./DevShapeUtils.jpg)
+
 
 ### 2、如何使用
 -------------------
@@ -49,10 +48,13 @@ public class DevApplication extends Application {
 }
 ```
 ##### 2.2.2 代码中使用
-- **样式设置：<br /> ① DevShapeUtils.xxx.into（view）** --直接设置到相应的view<br />**② DevShapeUtils.xxx.build()**--返回Drawable对象
+- **样式设置：<br /> ① DevShapeUtils.xxx.into（view）**--直接设置到相应的view<br />**② DevShapeUtils.xxx.build()**--返回Drawable对象
 - **颜色设置：** 所有的颜色设置均可使用&emsp;**R.color.xxx**&emsp;或者&emsp;**#FFFFFF**
 - **单位设置：** 项目中所有的数值单位为dp 
-###### 2.2.2.1 Shape样式设置
+###### 2.2.2.1 Shape样式
+**效果展示：**
+ ![DevShapeUtils.jpg](http://upload-images.jianshu.io/upload_images/2635045-08a0e46975b0c460.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/400/)
+**代码示例：**
 ``` java
 //椭圆
 DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(view);
@@ -77,7 +79,10 @@ DevShapeUtils.shape(DevShape.OVAL).gradientSweep(R.color.colorAccent, R.color.co
 //辐射渐变（gradientRadial 参数1：辐射范围 参数2：渐变颜色，颜色数量必须两个及以上）
 DevShapeUtils.shape(DevShape.OVAL).gradientRadial(30, R.color.colorAccent, R.color.colorPrimary).into(view);
 ```
-###### 2.2.2.2 Selector样式设置
+###### 2.2.2.2 Selector样式
+**效果展示：**
+![device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif](http://upload-images.jianshu.io/upload_images/2635045-bbdebac4de88620d.gif?imageMogr2/auto-orient/strip)
+**代码示例：**
 ``` java
 //触摸背景颜色变化(selectorBackground 参数1：触摸颜色 参数2 正常颜色)
 DevShapeUtils.selectorBackground(R.color.colorAccent,R.color.colorPrimary).into(view);
