@@ -53,7 +53,8 @@ public class DevApplication extends Application {
 - **单位设置：** 项目中所有的数值单位为dp 
 ###### 2.2.2.1 Shape样式
 **效果展示：**
- ![DevShapeUtils.jpg](http://upload-images.jianshu.io/upload_images/2635045-08a0e46975b0c460.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/400/)
+ ![Alt text](./DevShapeUtils.jpg)
+
 **代码示例：**
 ``` java
 //椭圆
@@ -81,7 +82,8 @@ DevShapeUtils.shape(DevShape.OVAL).gradientRadial(30, R.color.colorAccent, R.col
 ```
 ###### 2.2.2.2 Selector样式
 **效果展示：**
-![device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif](http://upload-images.jianshu.io/upload_images/2635045-bbdebac4de88620d.gif?imageMogr2/auto-orient/strip)
+![Alt text](./device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif)
+
 **代码示例：**
 ``` java
 //触摸背景颜色变化(selectorBackground 参数1：触摸颜色 参数2 正常颜色)
@@ -119,3 +121,4 @@ DevShapeUtils
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
