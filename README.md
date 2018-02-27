@@ -82,7 +82,7 @@ DevShapeUtils.shape(DevShape.OVAL).gradientRadial(30, R.color.colorAccent, R.col
 ```
 ###### 2.2.2.2 Selector样式
 **效果展示：**
-![Alt text](./device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif)
+![device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif](http://upload-images.jianshu.io/upload_images/2635045-bbdebac4de88620d.gif?imageMogr2/auto-orient/strip)
 
 **代码示例：**
 ``` java
