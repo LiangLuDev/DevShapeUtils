@@ -10,20 +10,11 @@
 ### 2、如何使用
 -------------------
 #### 2.1 Android Studio导入方法，添加Gradle依赖
-先在项目根目录的 build.gradle 的 repositories 添加:
-``` java
-allprojects {
-         repositories {
-            ...
-            maven { url "https://jitpack.io" }
-        }
-    }
-```
-然后在dependencies添加:
+在项目的 ``` build.gradle ``` 添加:
 ``` java
 dependencies {
         ...
-        compile 'com.github.LiangLuDev:DevShapeUtils:1.0.1'
+        implementation 'cn.luliangdev:DevShapeUtils:1.0.1'
         }
 ```
 #### 2.2 项目中使用
