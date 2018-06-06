@@ -14,7 +14,7 @@
 ``` java
 dependencies {
         ...
-        implementation 'cn.luliangdev:DevShapeUtils:1.0.1'
+        implementation 'cn.luliangdev:DevShapeUtils:1.0.2'
         }
 ```
 #### 2.2 项目中使用
@@ -41,7 +41,7 @@ public class DevApplication extends Application {
 ##### 2.2.2 代码中使用
 - **样式设置：<br /> ① DevShapeUtils.xxx.into（view）**--直接设置到相应的view<br />**② DevShapeUtils.xxx.build()**--返回Drawable对象
 - **颜色设置：** 所有的颜色设置均可使用&emsp;**R.color.xxx**&emsp;或者&emsp;**#FFFFFF**
-- **单位设置：** 项目中所有的数值单位为dp 
+- **单位设置：** 项目中所有的数值单位为dp
 ###### 2.2.2.1 Shape样式
 **效果展示：**
  ![Alt text](./DevShapeUtils.jpg)
@@ -104,7 +104,8 @@ DevShapeUtils
 //线性渐变（gradientLinear 参数1：渐变方向 参数2：渐变颜色，颜色数量必须两个及以上）
 DevShapeUtils
     .shape(DevShape.RECTANGLE)
-    .gradientLinear(DevShape.TOP_BOTTOM, R.color.colorAccent, R.color.colorPrimary)
+    .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
+    .orientation(DevShape.TOP_BOTTOM)
     .into(view);
 
 //扫描渐变（gradientSweep 参数1：渐变颜色，颜色数量必须两个及以上）
@@ -157,6 +158,12 @@ DevShapeUtils
 如果遇到问题或者好的建议，请反馈到：issue、927195249@qq.com 或者LiangLuDev@gmail.com
 
 如果觉得对你有用的话，点一下右上的星星赞一下吧!
+
+
+### 4、更新日志
+##### 1.0.2
+- 增加线性渐变方向设置，兼容`Kotlin`使用。
+
 
 ## License
 -------------------

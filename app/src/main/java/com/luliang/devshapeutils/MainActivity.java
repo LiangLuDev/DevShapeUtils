@@ -70,19 +70,23 @@ public class MainActivity extends AppCompatActivity {
         //渐变
         TextView tv_gradient_linear_tb = findViewById(R.id.tv_gradient_linear_tb);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear(DevShape.TOP_BOTTOM, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
+                .orientation(DevShape.TOP_BOTTOM)
                 .into(tv_gradient_linear_tb);
         TextView tv_gradient_linear_bt = findViewById(R.id.tv_gradient_linear_bt);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear(DevShape.BOTTOM_TOP, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .orientation(DevShape.BOTTOM_TOP)
                 .into(tv_gradient_linear_bt);
         TextView tv_gradient_linear_lr = findViewById(R.id.tv_gradient_linear_lr);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear(DevShape.LEFT_RIGHT, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .orientation(DevShape.LEFT_RIGHT)
                 .into(tv_gradient_linear_lr);
         TextView tv_gradient_linear_rl = findViewById(R.id.tv_gradient_linear_rl);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear(DevShape.RIGHT_LEFT, R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .orientation(DevShape.RIGHT_LEFT)
                 .into(tv_gradient_linear_rl);
         TextView tv_gradient_sweep = findViewById(R.id.tv_gradient_sweep);
         DevShapeUtils.shape(DevShape.OVAL)

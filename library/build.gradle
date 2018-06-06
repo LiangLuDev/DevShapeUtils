@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
-def mavenVersionCode = 1
-def mavenVersionName = "1.0.1"
+def mavenVersionCode = 2
+def mavenVersionName = "1.0.2"
 
 android {
     compileSdkVersion 26
@@ -38,7 +38,7 @@ publish {
     userOrg = 'luliangdev'//bintray.com用户名
     groupId = 'cn.luliangdev'//jcenter上的路径
     artifactId = 'DevShapeUtils'//项目名称
-    publishVersion = '1.0.1'//版本号
+    publishVersion = '1.0.2'//版本号
     desc = 'One line of code to set Shape style, Selector touch feedback effect library'//描述，不重要
 
     website = 'https://github.com/LiangLuDev/DevShapeUtils'//网站，最好有，不重要

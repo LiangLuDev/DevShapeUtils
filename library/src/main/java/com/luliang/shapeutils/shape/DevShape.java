@@ -298,49 +298,13 @@ public class DevShape implements IDevUtils<Drawable, View> {
         return this;
     }
 
-
     /**
-     * 线性渐变样式
-     *
-     * @param gradientColorsResId 渐变颜色数组 数组元素 例：R.color.colorPrimary
-     * @param gradientOrientation 渐变方向
+     * 设置渐变方向
+     * @param gradientOrientation  渐变方向
      * @return BaseShape
      */
-    public DevShape gradientLinear(@GradientOrientation String gradientOrientation, @ColorRes int... gradientColorsResId) {
-        this.isGradient = true;
-        this.gradientType = GradientDrawable.LINEAR_GRADIENT;
+    public DevShape orientation(@GradientOrientation String gradientOrientation){
         this.gradientOrientation = gradientOrientation;
-        if (gradientColorsResId.length > 1) {
-            this.gradientColors = new int[gradientColorsResId.length];
-            for (int i = 0; i < gradientColorsResId.length; i++) {
-                this.gradientColors[i] = DevShapeUtils.getContext().getResources().getColor(gradientColorsResId[i]);
-            }
-        } else {
-            throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
-        }
-        return this;
-    }
-
-
-    /**
-     * 线性渐变样式
-     *
-     * @param gradientColors      渐变颜色数组 数组元素 例：#ffffff
-     * @param gradientOrientation 渐变方向
-     * @return BaseShape
-     */
-    public DevShape gradientLinear(@GradientOrientation String gradientOrientation, String... gradientColors) {
-        this.isGradient = true;
-        this.gradientType = GradientDrawable.LINEAR_GRADIENT;
-        this.gradientOrientation = gradientOrientation;
-        if (gradientColors.length > 1) {
-            this.gradientColors = new int[gradientColors.length];
-            for (int i = 0; i < gradientColors.length; i++) {
-                this.gradientColors[i] = Color.parseColor(gradientColors[i]);
-            }
-        } else {
-            throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
-        }
         return this;
     }
 
