@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.luliang.shapeutils.DevShapeKt;
 import com.luliang.shapeutils.DevShapeUtils;
+import com.luliang.shapeutils.ShapeBuilder;
 import com.luliang.shapeutils.shape.DevShape;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +23,20 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         //圆形
         TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
-        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
+//        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
+
+        ShapeBuilder builder = new ShapeBuilder();
+        DevShapeKt devShapeKt = new DevShapeKt();
+        devShapeKt.setBgColor(DevShapeUtils.getContext().getResources().getColor(R.color.colorPrimary));
+        devShapeKt.setRadius(8);
+        builder.with(devShapeKt);
+        builder.createShape();
+        builder.into(tv_oval_solid);
+
+
+
+
+
         TextView tv_oval_line = findViewById(R.id.tv_oval_line);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).line(1, R.color.colorPrimary).into(tv_oval_line);
         TextView tv_oval_dash_line = findViewById(R.id.tv_oval_dash_line);
