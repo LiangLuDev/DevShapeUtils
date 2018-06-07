@@ -101,7 +101,8 @@ DevShapeUtils
     .gradient(R.color.colorAccent, R.color.colorPrimary)
     .into(view);
 
-//线性渐变（gradientLinear 参数1：渐变方向 参数2：渐变颜色，颜色数量必须两个及以上）
+//线性渐变（参数：渐变颜色，颜色数量必须两个及以上）
+//orientation在gradientLinear之后设置才有效
 DevShapeUtils
     .shape(DevShape.RECTANGLE)
     .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
