@@ -138,4 +138,16 @@ public class DevShapeUtils {
         return ColorSelector.getInstance().selectorColor(Color.parseColor(pressedColor), Color.parseColor(normalColor));
     }
 
+    /**
+     * .
+     * 是否可用背景状态选择器（背景颜色）
+     *
+     * @param enableColor view 可用颜色 例：#ffffff
+     * @param disableColor  view 不可用颜色 例：#ffffff
+     * @return DrawableSelector
+     */
+    public static DrawableSelector selectorEnableBackground(String enableColor, String disableColor) {
+        return DrawableSelector.getInstance().selectorEnableBackground(new ColorDrawable(Color.parseColor(enableColor)), new ColorDrawable(Color.parseColor(disableColor)));
+    }
+
 }

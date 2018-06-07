@@ -31,6 +31,12 @@ public class DrawableSelector implements IDevUtils<Drawable, View> {
     private boolean isSelectorColor;
     private ColorStateList mColorStateList;
 
+    //可点击颜色
+    private Drawable mEnableDrawable;
+    //不可点击颜色
+    private Drawable mDisableDrawable;
+
+
 
     public static DrawableSelector getInstance() {
         mDrawableSelector = new DrawableSelector();
@@ -51,6 +57,21 @@ public class DrawableSelector implements IDevUtils<Drawable, View> {
         this.mNormalDrawable = normalDrawable;
         return this;
     }
+
+    /**
+     * .
+     * 背景状态选择器（背景Drawable）
+     *
+     * @param enableDrawable 可点击(可用)颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @param disableDrawable  不可点击(可用)颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @return DrawableSelector
+     */
+    public DrawableSelector selectorEnableBackground(Drawable enableDrawable, Drawable disableDrawable) {
+        this.mEnableDrawable = enableDrawable;
+        this.mDisableDrawable = disableDrawable;
+        return this;
+    }
+
 
     /**
      * 设置背景选择器同时设置字体颜色颜色器
@@ -112,6 +133,8 @@ public class DrawableSelector implements IDevUtils<Drawable, View> {
         StateListDrawable stateListDrawable = new StateListDrawable();
         stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, mPressedDrawable);// 按下显示的图片
         stateListDrawable.addState(new int[]{}, mNormalDrawable);// 抬起显示的图片
+        stateListDrawable.addState(new int[]{android.R.attr.state_enabled}, mEnableDrawable);// view可用时的背景
+        stateListDrawable.addState(new int[]{-android.R.attr.state_enabled}, mDisableDrawable);// view不可用时的背景
         return stateListDrawable;
     }
 }
