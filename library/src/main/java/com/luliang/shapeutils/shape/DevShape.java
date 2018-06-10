@@ -300,10 +300,11 @@ public class DevShape implements IDevUtils<Drawable, View> {
 
     /**
      * 设置渐变方向
-     * @param gradientOrientation  渐变方向
+     *
+     * @param gradientOrientation 渐变方向
      * @return BaseShape
      */
-    public DevShape orientation(@GradientOrientation String gradientOrientation){
+    public DevShape orientation(@GradientOrientation String gradientOrientation) {
         this.gradientOrientation = gradientOrientation;
         return this;
     }

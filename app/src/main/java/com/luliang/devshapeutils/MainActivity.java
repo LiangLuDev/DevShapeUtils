@@ -15,11 +15,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        
+
     }
 
 
     private void initView() {
+
         //圆形
         TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
@@ -41,16 +42,33 @@ public class MainActivity extends AppCompatActivity {
         DevShapeUtils.shape(DevShape.RECTANGLE).line(1, R.color.colorAccent).radius(999).into(tv_rect_line);
         //触摸反馈
         Button btn_selector_background = findViewById(R.id.btn_selector_background);
-        DevShapeUtils.selectorBackground(
+        DevShapeUtils.selectorPressed(
                 DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
                 DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
                 .into(btn_selector_background);
         Button btn_selector_background_color = findViewById(R.id.btn_selector_background_color);
-        DevShapeUtils.selectorBackground(
+        DevShapeUtils.selectorPressed(
                 DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
                 DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
-                .selectorColor("#ffffff", "#000000")
+                .selectorTextColor("#ffffff", "#000000")
                 .into(btn_selector_background_color);
+
+        //点击事件是否可用 默认为true
+        Button btn_selector_press = findViewById(R.id.btn_selector_press);
+        DevShapeUtils
+                .selectorEnable(DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
+                                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
+                .into(btn_selector_press);
+        //默认为true
+        btn_selector_press.setEnabled(false);
+        Button btn_selector_press_color = findViewById(R.id.btn_selector_press_color);
+        DevShapeUtils
+                .selectorEnable(DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
+                        DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
+                .selectorTextColor("#ffffff", "#000000")
+                .into(btn_selector_press_color);
+
+
         //圆角
         TextView tv_rect_top_radius = findViewById(R.id.tv_rect_top_radius);
         DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).tlRadius(10).trRadius(10).into(tv_rect_top_radius);
@@ -76,17 +94,17 @@ public class MainActivity extends AppCompatActivity {
                 .into(tv_gradient_linear_tb);
         TextView tv_gradient_linear_bt = findViewById(R.id.tv_gradient_linear_bt);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
                 .orientation(DevShape.BOTTOM_TOP)
                 .into(tv_gradient_linear_bt);
         TextView tv_gradient_linear_lr = findViewById(R.id.tv_gradient_linear_lr);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
                 .orientation(DevShape.LEFT_RIGHT)
                 .into(tv_gradient_linear_lr);
         TextView tv_gradient_linear_rl = findViewById(R.id.tv_gradient_linear_rl);
         DevShapeUtils.shape(DevShape.RECTANGLE)
-                .gradientLinear( R.color.colorAccent, R.color.colorPrimary)
+                .gradientLinear(R.color.colorAccent, R.color.colorPrimary)
                 .orientation(DevShape.RIGHT_LEFT)
                 .into(tv_gradient_linear_rl);
         TextView tv_gradient_sweep = findViewById(R.id.tv_gradient_sweep);
@@ -95,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_gradient_radial = findViewById(R.id.tv_gradient_radial);
         DevShapeUtils.shape(DevShape.OVAL)
                 .gradientRadial(30, R.color.colorAccent, R.color.colorPrimary).into(tv_gradient_radial);
-
 
     }
 }
