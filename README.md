@@ -126,7 +126,7 @@ DevShapeUtils
 ![device-2018-02-27-143029 00_00_00-00_00_10 [240p].gif](http://upload-images.jianshu.io/upload_images/2635045-bbdebac4de88620d.gif?imageMogr2/auto-orient/strip)
 
 **代码示例：**
-> `Selector`可以自己设置，具体对应关系可以查看 [`Selector`状态详解](https://github.com/LiangLuDev/DevShapeUtils/blob/c573f4ec93d2e05d0945a5abb80f0de5297c3905/Selector%E7%8A%B6%E6%80%81%E8%AF%A6%E8%A7%A3.md)
+> `Selector`可以自己设置，具体对应关系可以查看 [`Selector`状态详解](https://github.com/LiangLuDev/DevShapeUtils/blob/master/Selector%E7%8A%B6%E6%80%81%E8%AF%A6%E8%A7%A3.md)
 
 ``` java
 //设置Selector状态 (selector 参数1：Selector状态 参数2：true状态颜色 参数2 false状态颜色)
