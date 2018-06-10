@@ -14,7 +14,7 @@
 ``` java
 dependencies {
         ...
-        implementation 'cn.luliangdev:DevShapeUtils:1.0.2'
+        implementation 'cn.luliangdev:DevShapeUtils:1.0.3'
         }
 ```
 #### 2.2 项目中使用
@@ -127,15 +127,21 @@ DevShapeUtils
 
 **代码示例：**
 ``` java
-//触摸背景颜色变化(selectorBackground 参数1：触摸颜色 参数2 正常颜色)
+//设置Selector状态 (selector 参数1：Selector状态 参数2：true状态颜色 参数2 false状态颜色)
 DevShapeUtils
-        .selectorBackground(R.color.colorAccent,R.color.colorPrimary)
+		.selector(DevSelector.STATE_CHECKABLE,R.color.colorAccent,R.color.colorPrimary)
+	    .selectorTextColor("#ffffff", "#000000")
+	    .into(button);
+
+//触摸背景颜色变化(selectorPressed 参数1：触摸颜色 参数2 正常颜色)
+DevShapeUtils
+        .selectorPressed(R.color.colorAccent,R.color.colorPrimary)
         .into(view);
 
-//触摸背景颜色和字体颜色变化(selectorColor 参数1：触摸颜色 参数2 正常颜色)
+//触摸背景颜色和字体颜色变化(selectorTextColor 参数1：触摸颜色 参数2 正常颜色)
 DevShapeUtils
-        .selectorBackground(R.color.colorAccent,R.color.colorPrimary)
-        .selectorColor("#ffffff", "#000000")
+        .selectorPressed(R.color.colorAccent,R.color.colorPrimary)
+        .selectorTextColor("#ffffff", "#000000")
         .into(view);
 
 //触摸圆角背景和字体颜色变化
@@ -151,9 +157,19 @@ Drawable normalDrawable = DevShapeUtils
         .build();
 
 DevShapeUtils
-        .selectorBackground(pressedDrawable,normalDrawable)
-        .selectorColor("#ffffff", "#000000")
+        .selectorPressed(pressedDrawable,normalDrawable)
+        .selectorTextColor("#ffffff", "#000000")
         .into(view);
+
+//设置点击事件是否可用(selectorEnable 参数1：可点击颜色颜色 参数2 不可点击颜色颜色)
+//设置selector字体颜色只能使用into  只能传入TextView的及子类
+DevShapeUtils
+        .selectorEnable(R.color.colorAccent,R.color.colorPrimary)
+        .selectorTextColor("#ffffff", "#000000")
+        .into(button);
+
+//button默认true
+button.setEnabled(false);
 ```
 ### 3、意见反馈
 如果遇到问题或者好的建议，请反馈到：issue、927195249@qq.com 或者LiangLuDev@gmail.com
@@ -162,10 +178,20 @@ DevShapeUtils
 
 
 ### 4、更新日志
+##### 1.0.3
+- 简化API
+- 废弃单独设置`selector`颜色
+- 增加快捷设置`selector`两种常用状态  `selectorEnable`和 `selectorPressed`
+- 增加`selector`状态设置`selector(DevSelector.STATE_CHECKABLE,R.color.xxx,R.color.xxx)`
 ##### 1.0.2
 - 增加线性渐变方向设置，兼容`Kotlin`使用。
 
+### 5、更多功能
+> 由于用户反馈，后面该库会持续更新、完善、增加新的功能，尽量支持日常使用的所有场景，欢迎反馈。
 
+- 背景支持图片
+- 样式支持阴影（阴影颜色根据背景颜色）
+- 支持XML设置样式
 ## License
 -------------------
 > Copyright 2018 Liang_Lu

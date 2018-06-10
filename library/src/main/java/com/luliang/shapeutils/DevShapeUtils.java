@@ -155,12 +155,12 @@ public class DevShapeUtils {
      * .
      * 是否按压背景状态选择器（背景Drawable）
      *
-     * @param enableColor 触摸颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
-     * @param disableColor  正常颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @param enableDrawable 触摸颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @param disableDrawable  正常颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
      * @return DevSelector
      */
-    public static DevSelector selectorEnable(Drawable enableColor, Drawable disableColor) {
-        return DevSelector.getInstance().selectorEnable(enableColor, disableColor);
+    public static DevSelector selectorEnable(Drawable enableDrawable, Drawable disableDrawable) {
+        return DevSelector.getInstance().selectorEnable(enableDrawable, disableDrawable);
     }
 
 
