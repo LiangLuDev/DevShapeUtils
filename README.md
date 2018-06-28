@@ -14,7 +14,7 @@
 ``` java
 dependencies {
         ...
-        implementation 'cn.luliangdev:DevShapeUtils:1.0.2'
+        implementation 'cn.luliangdev:DevShapeUtils:1.0.3'
         }
 ```
 #### 2.2 项目中使用
