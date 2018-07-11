@@ -1,1 +1,1 @@
-include ':app', ':library', ':library-databinding'
+include ':app', ':library'/*, ':library-databinding'*/

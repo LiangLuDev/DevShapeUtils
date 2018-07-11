@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DevShapeUtils</string>
+    <string name="color">#000000</string>
 </resources>

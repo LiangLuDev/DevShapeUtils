@@ -1,5 +1,7 @@
 package com.luliang.devshapeutils;
 
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
@@ -13,8 +15,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ViewDataBinding viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setContentView(viewDataBinding.getRoot());
         initView();
+
 
     }
 
@@ -22,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
 
         //圆形
-        TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
-        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
+//        TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
+//        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
         TextView tv_oval_line = findViewById(R.id.tv_oval_line);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).line(1, R.color.colorPrimary).into(tv_oval_line);
         TextView tv_oval_dash_line = findViewById(R.id.tv_oval_dash_line);
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         Button btn_selector_press = findViewById(R.id.btn_selector_press);
         DevShapeUtils
                 .selectorEnable(DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
-                                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
+                        DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
                 .into(btn_selector_press);
         //默认为true
         btn_selector_press.setEnabled(false);
