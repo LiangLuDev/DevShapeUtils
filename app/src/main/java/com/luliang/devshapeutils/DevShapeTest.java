@@ -20,7 +20,7 @@ public class DevShapeTest {
 
     private static final String TAG = "DevShapeTest";
 
-    @BindingAdapter("solid")
+    @BindingAdapter("android:solid")
     public static void setShape(View view, String color){
         Log.d(TAG, "setShape: "+color);
         DevShapeUtils.shape(DevShape.OVAL)

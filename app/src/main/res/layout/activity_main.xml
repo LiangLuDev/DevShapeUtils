@@ -34,7 +34,7 @@
                     android:gravity="center"
                     android:textColor="#000"
                     android:textSize="10sp"
-                    bind:solid="@{@string/color}" />
+                    android:solid="@{`#000000`}" />
 
                 <TextView
                     android:id="@+id/tv_oval_line"
