@@ -1,9 +1,11 @@
 package com.luliang.devshapeutils;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -15,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewDataBinding viewDataBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        setContentView(viewDataBinding.getRoot());
+        setContentView(R.layout.activity_main);
         initView();
 
 
@@ -24,14 +25,21 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView() {
+        Button btn_databinding = findViewById(R.id.btn_databinding);
+        btn_databinding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BindingActivity.class));
+            }
+        });
 
         //圆形
-//        TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
-//        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
+        TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
+        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
         TextView tv_oval_line = findViewById(R.id.tv_oval_line);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).line(1, R.color.colorPrimary).into(tv_oval_line);
         TextView tv_oval_dash_line = findViewById(R.id.tv_oval_dash_line);
-        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).dashLine(1, R.color.colorPrimary, 5, 5).into(tv_oval_dash_line);
+        DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).dashLine(3, R.color.colorPrimary, 5, 5).into(tv_oval_dash_line);
         //矩形
         TextView tv_rect_solid_radius = findViewById(R.id.tv_rect_solid_radius);
         DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(5).into(tv_rect_solid_radius);

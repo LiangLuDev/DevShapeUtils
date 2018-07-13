@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="devShapeUtils">
+        <attr name="solid" format="color|reference"/>
+
+
+    </declare-styleable>
+
+</resources>
