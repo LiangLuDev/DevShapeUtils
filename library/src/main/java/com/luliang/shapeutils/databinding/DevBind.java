@@ -59,13 +59,14 @@ public class DevBind {
                                  String gradientSweepColors, float gradientRadialRadius, String gradientRadialColors) {
 
 
-        Drawable shapeDrawable = createShape(shape, solidColor, lineWidth, lineColor,
+        Drawable shapeDrawable = buildShape(shape, solidColor, lineWidth, lineColor,
                 dashLineWidth, dashLineColor, dashWidth, dashGap,
                 radius, trRadius, tlRadius, brRadius, blRadius,
                 gradientLinearOrientation, gradientLinearStartColor, gradientLinearEndColor,
                 gradientSweepColors, gradientRadialRadius, gradientRadialColors);
 
-//        view.setBackground(DevShapeUtils.shape(DevShape.OVAL).bindSolid(solidColor).build());
+//        Drawable drawable = DevShapeUtils.shape(DevShape.OVAL).bindSolid(solidColor).build();
+//        view.setBackground(drawable);
 
         //样式设置（圆形或者矩形）
 //        int shapeModel;
@@ -173,7 +174,7 @@ public class DevBind {
     /**
      * 生成样式
      */
-    private static Drawable createShape(String shape, int solidColor, int lineWidth, Object lineColor,
+    private static Drawable buildShape(String shape, Object solidColor, int lineWidth, Object lineColor,
                                         int dashLineWidth, Object dashLineColor, float dashWidth, float dashGap,
                                         float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
                                         String gradientLinearOrientation, Object gradientLinearStartColor, Object gradientLinearEndColor,
@@ -196,17 +197,14 @@ public class DevBind {
 
         DevShape devShape = DevShapeUtils.shape(shapeModel);
 
-        Log.d(TAG, "createShape: " + toHexEncoding(solidColor));
-        devShape.solid(toHexEncoding(solidColor));
-
         //背景颜色
-//        if (solidColor != null) {
-//            if (isStrColor(solidColor)) {
-//                devShape.solid(solidColor.toString());
-//            } else {
-//                devShape.bindSolid((Integer) solidColor);
-//            }
-//        }
+        if (solidColor != null) {
+            if (isStrColor(solidColor)) {
+                devShape.solid(solidColor.toString());
+            } else {
+                devShape.bindSolid((Integer) solidColor);
+            }
+        }
         //边框宽度和颜色
         if (lineColor != null && lineWidth > 0) {
             if (isStrColor(lineColor)) {

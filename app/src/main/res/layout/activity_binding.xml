@@ -34,7 +34,9 @@
                     android:text="圆形-填充"
                     android:textColor="#000"
                     android:textSize="10sp"
-                    app:solid="@{@color/colorAccent}"
+                    app:solid="@{@color/colorPrimary}"
+                    app:line_color="@{@color/colorAccent}"
+                    app:line_width="@{1}"
                     />
 
                 <TextView
