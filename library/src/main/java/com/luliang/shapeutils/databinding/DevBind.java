@@ -129,6 +129,64 @@ public class DevBind {
 
 
     /**
+     * Selector设置-int色值 例：@color/color 类型颜色
+     */
+    @BindingAdapter(value = {"shape", "radius", "tr_radius", "tl_radius", "br_radius", "bl_radius",
+            "selector_pressed_color", "selector_pressed_normal_color", "selector_enable_color", "selector_enable_normal_color",
+            "selector_select_color", "selector_normal_color", "selector_state", "selector_select_text_color", "selector_normal_text_color"}, requireAll = false)
+    public static void bindSelector(View view, String shape, float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
+                                    int pressedColor, int pressedNormalColor, int enableColor, int enableNormalColor,
+                                    int selectColor, int normalColor, String selectorState, int selectTextColor, int normalTextColor) {
+        Drawable selectDrawable = null;
+        Drawable normalDrawable = null;
+
+
+        if (pressedColor != 0 && pressedNormalColor != 0) {
+            selectDrawable = buildShape(shape, pressedColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+            normalDrawable = buildShape(shape, pressedNormalColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+            selectorState = "PRESSED";
+        }
+
+        if (enableColor != 0 && enableNormalColor != 0) {
+            selectDrawable = buildShape(shape, enableColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+            normalDrawable = buildShape(shape, enableNormalColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+            selectorState = "ENABLED";
+        }
+
+        if (selectColor != 0 && normalColor != 0) {
+            selectDrawable = buildShape(shape, selectColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+            normalDrawable = buildShape(shape, normalColor, 0, null, 0, null, 0, 0,
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+
+        }
+
+        if (selectorState != null) {
+            //TextView等view默认没有点击事件，所以针对view初始化点击事件
+            view.setOnClickListener(null);
+            //设置触摸字体颜色变化
+            if (selectTextColor != 0 && normalTextColor != 0) {
+                DevShapeUtils.selector(getSelectorState(selectorState), selectDrawable, normalDrawable).bindSelectorTextColor(selectTextColor, normalTextColor).into(view);
+            } else {
+                DevShapeUtils.selector(getSelectorState(selectorState), selectDrawable, normalDrawable).into(view);
+            }
+        } else {
+            throw new ExceptionInInitializerError("请先设置SelectorState！！！");
+        }
+    }
+
+
+
+    /**
      * 生成样式
      *
      * @return Drawable样式
