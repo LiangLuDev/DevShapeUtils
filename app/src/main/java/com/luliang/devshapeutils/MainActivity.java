@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         //圆形
         TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).into(tv_oval_solid);
+
+
+
         TextView tv_oval_line = findViewById(R.id.tv_oval_line);
         DevShapeUtils.shape(DevShape.OVAL).solid(R.color.colorAccent).line(1, R.color.colorPrimary).into(tv_oval_line);
         TextView tv_oval_dash_line = findViewById(R.id.tv_oval_dash_line);
@@ -54,10 +57,11 @@ public class MainActivity extends AppCompatActivity {
         DevShapeUtils.shape(DevShape.RECTANGLE).line(1, R.color.colorAccent).radius(999).into(tv_rect_line);
         //触摸反馈
         Button btn_selector_background = findViewById(R.id.btn_selector_background);
-        DevShapeUtils.selectorPressed(
-                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
-                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
-                .into(btn_selector_background);
+        DevShapeUtils.selectorPressed("#000000", "#cccccc").into(btn_selector_background);
+//        DevShapeUtils.selectorPressed(
+//                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),
+//                DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorAccent).radius(999).build())
+//                .into(btn_selector_background);
         Button btn_selector_background_color = findViewById(R.id.btn_selector_background_color);
         DevShapeUtils.selectorPressed(
                 DevShapeUtils.shape(DevShape.RECTANGLE).solid(R.color.colorPrimary).radius(999).build(),

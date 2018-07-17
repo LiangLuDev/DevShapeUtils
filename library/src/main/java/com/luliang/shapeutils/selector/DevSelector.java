@@ -152,6 +152,8 @@ public class DevSelector implements IDevUtils<Drawable, View> {
 
     @Override
     public void into(View view) {
+        //TextView等view默认没有点击事件，所以针对view初始化点击事件
+        view.setOnClickListener(null);
         view.setBackground(createDrawableSelector());
         if (isSelectorTextColor) {
             try {
@@ -162,7 +164,7 @@ public class DevSelector implements IDevUtils<Drawable, View> {
                 ((TextView) view).setTextColor(new ColorStateList(states, colors));
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new ExceptionInInitializerError("设置字体颜色选择器（Selector）请传入TextView（包括Button）！！！");
+                throw new ExceptionInInitializerError("设置字体颜色选择器（Selector）请传入TextView（或者TextView的子类，比如Button）！！！");
             }
         }
     }

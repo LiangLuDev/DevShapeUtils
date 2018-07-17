@@ -34,12 +34,14 @@
                     android:text="圆形-填充"
                     android:textColor="#000"
                     android:textSize="10sp"
-                    app:solid="@{@color/colorPrimary}"
+                    app:solid="@{@color/colorPr}"
                     app:line_color="@{@color/colorAccent}"
                     app:line_width="@{1}"
                     />
 
                 <TextView
+                    app:selector_pressed_color="@{`#000000`}"
+                    app:selector_pressed_normal_color="@{`#cccccc`}"
                     android:id="@+id/tv_oval_line"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
