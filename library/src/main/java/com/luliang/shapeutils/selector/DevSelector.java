@@ -150,8 +150,25 @@ public class DevSelector implements IDevUtils<Drawable, View> {
     }
 
 
+    /**
+     * 设置背景选择器同时设置字体颜色颜色器-仅供databinding使用
+     *
+     * @param selectColorResId 触摸颜色 例：databinding获取的资源文件色值
+     * @param normalColorResId 正常颜色 例：databinding获取的资源文件色值
+     * @return DevSelector
+     */
+    public DevSelector bindSelectorTextColor(int selectColorResId, int normalColorResId) {
+        this.isSelectorTextColor = true;
+        this.mSelectTextColor = selectColorResId;
+        this.mNormalTextColor = normalColorResId;
+        return this;
+    }
+
+
     @Override
     public void into(View view) {
+        //TextView等view默认没有点击事件，所以针对view初始化点击事件
+        view.setOnClickListener(null);
         view.setBackground(createDrawableSelector());
         if (isSelectorTextColor) {
             try {
@@ -162,7 +179,7 @@ public class DevSelector implements IDevUtils<Drawable, View> {
                 ((TextView) view).setTextColor(new ColorStateList(states, colors));
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new ExceptionInInitializerError("设置字体颜色选择器（Selector）请传入TextView（包括Button）！！！");
+                throw new ExceptionInInitializerError("设置字体颜色选择器（Selector）请传入TextView（或者TextView的子类，比如Button）！！！");
             }
         }
     }

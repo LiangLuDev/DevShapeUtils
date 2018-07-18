@@ -41,11 +41,11 @@ public class DevShape implements IDevUtils<Drawable, View> {
     private int lineWidth = 1;
 
     /*虚线参数*/
-    //虚线宽度 默认1px
+    //虚线边框宽度 默认1px
     private int dashLineWidth = 1;
     //虚线颜色
     private int dashLineColor = 1;
-    //虚线宽度
+    //虚线的实线宽度
     private float dashWidth = 1;
     //虚线间隙宽度
     private float dashGap = 1;
@@ -149,10 +149,22 @@ public class DevShape implements IDevUtils<Drawable, View> {
     }
 
     /**
+     * 背景填充样－仅供databinding使用
+     *
+     * @param backgroundColor databinding获取的资源文件色值
+     * @return BaseShape
+     */
+    public DevShape bindSolid(int backgroundColor) {
+        this.isBackgroundColor = true;
+        this.backgroundColor = backgroundColor;
+        return this;
+    }
+
+    /**
      * 边框实线样式
      *
      * @param lineColorResId 边框线颜色 例：R.color.colorPrimary
-     * @param lineWidth      边框线宽度 px
+     * @param lineWidth      边框线宽度 dp
      * @return BaseShape
      */
     public DevShape line(int lineWidth, @ColorRes int lineColorResId) {
@@ -166,7 +178,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
      * 边框实线样式
      *
      * @param lineColor 边框线颜色 例：#ffffff
-     * @param lineWidth 边框线宽度 px
+     * @param lineWidth 边框线宽度 dp
      * @return BaseShape
      */
     public DevShape line(int lineWidth, String lineColor) {
@@ -178,12 +190,27 @@ public class DevShape implements IDevUtils<Drawable, View> {
 
 
     /**
+     * bindLine 边框实线样式 - 仅供databinding使用
+     *
+     * @param lineColor 边框线颜色  databinding获取的资源文件色值
+     * @param lineWidth      边框线宽度 dp
+     * @return BaseShape
+     */
+    public DevShape bindLine(int lineWidth, int lineColor) {
+        this.isLine = true;
+        this.lineWidth = lineWidth;
+        this.lineColor = lineColor;
+        return this;
+    }
+
+
+    /**
      * 边框虚线样式
      *
      * @param dashLineColorResId 边框线颜色 例：R.color.colorPrimary
-     * @param dashLineWidth      边框虚线宽度 px
-     * @param dashWidth          虚线宽度 px
-     * @param dashGap            间隙宽度 px
+     * @param dashLineWidth      边框虚线宽度 dp
+     * @param dashWidth          虚线宽度 dp
+     * @param dashGap            间隙宽度 dp
      * @return BaseShape
      */
     public DevShape dashLine(int dashLineWidth, @ColorRes int dashLineColorResId, float dashWidth, float dashGap) {
@@ -200,9 +227,9 @@ public class DevShape implements IDevUtils<Drawable, View> {
      * 边框虚线样式
      *
      * @param dashLineColor 边框线颜色 例：#ffffff
-     * @param dashLineWidth 边框虚线宽度 px
-     * @param dashWidth     虚线宽度 px
-     * @param dashGap       间隙宽度 px
+     * @param dashLineWidth 边框虚线宽度 dp
+     * @param dashWidth     虚线宽度 dp
+     * @param dashGap       间隙宽度 dp
      * @return BaseShape
      */
     public DevShape dashLine(int dashLineWidth, String dashLineColor, float dashWidth, float dashGap) {
@@ -211,6 +238,24 @@ public class DevShape implements IDevUtils<Drawable, View> {
         this.dashWidth = dashWidth;
         this.dashGap = dashGap;
         this.dashLineColor = Color.parseColor(dashLineColor);
+        return this;
+    }
+
+    /**
+     * 边框虚线样式 - 仅供databinding使用
+     *
+     * @param dashLineColor 边框线颜色  databinding获取的资源文件色值
+     * @param dashLineWidth 边框虚线宽度 dp
+     * @param dashWidth     虚线宽度 dp
+     * @param dashGap       间隙宽度 dp
+     * @return BaseShape
+     */
+    public DevShape bindDashLine(int dashLineWidth, int dashLineColor, float dashWidth, float dashGap) {
+        this.isDashLine = true;
+        this.dashLineWidth = dashLineWidth;
+        this.dashWidth = dashWidth;
+        this.dashGap = dashGap;
+        this.dashLineColor = dashLineColor;
         return this;
     }
 
@@ -298,6 +343,27 @@ public class DevShape implements IDevUtils<Drawable, View> {
         return this;
     }
 
+
+    /**
+     * 线性渐变样式-- 仅供databinding使用
+     * 默认方向 从上到下渐变 TOP_BOTTOM
+     *
+     * @param gradientColors 渐变颜色数组 数组元素 databinding获取的资源文件色值
+     * @return BaseShape
+     */
+    public DevShape bindGradientLinear(int... gradientColors) {
+        this.isGradient = true;
+        this.gradientType = GradientDrawable.LINEAR_GRADIENT;
+        this.gradientOrientation = TOP_BOTTOM;
+        if (gradientColors.length > 1) {
+            this.gradientColors = new int[gradientColors.length];
+            System.arraycopy(gradientColors, 0, this.gradientColors, 0, gradientColors.length);
+        } else {
+            throw new ExceptionInInitializerError("渐变颜色数组至少需要两个颜色");
+        }
+        return this;
+    }
+
     /**
      * 设置渐变方向
      *
@@ -316,7 +382,7 @@ public class DevShape implements IDevUtils<Drawable, View> {
      * @param gradientColors 渐变颜色数组 数组元素 例：R.color.colorPrimary
      * @return BaseShape
      */
-    public DevShape gradientSweep(int... gradientColors) {
+    public DevShape gradientSweep(@ColorRes int... gradientColors) {
         this.isGradient = true;
         this.gradientType = GradientDrawable.SWEEP_GRADIENT;
         if (gradientColors.length > 1) {

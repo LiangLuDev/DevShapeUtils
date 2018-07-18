@@ -90,6 +90,19 @@ public class DevShapeUtils {
         return DevSelector.getInstance().selector(selectorState,new ColorDrawable(DevShapeUtils.getContext().getResources().getColor(pressedColorResId)), new ColorDrawable(DevShapeUtils.getContext().getResources().getColor(normalColorResId)));
     }
 
+    /**
+     * .
+     * 背景状态选择器（背景颜色）
+     *
+     * @param selectDrawable 触摸颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @param normalDrawable  正常颜色 例：Context.getResources.getDrawable(R.drawable/mipmap.xxx)
+     * @return DevSelector
+     */
+    public static DevSelector selector(@DevSelector.SelectorState int selectorState,Drawable selectDrawable, Drawable normalDrawable) {
+        return DevSelector.getInstance().selector(selectorState,selectDrawable, normalDrawable);
+    }
+
+
 
     /**
      * 是否按压背景状态选择器（背景颜色）

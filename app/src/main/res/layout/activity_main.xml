@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -14,7 +14,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
+        <Button
+            android:id="@+id/btn_databinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DataBinding使用"
+            android:textSize="12sp" />
 
 
         <LinearLayout
@@ -34,7 +39,7 @@
                 android:gravity="center"
                 android:text="圆形-填充"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_oval_line"
@@ -44,7 +49,7 @@
                 android:gravity="center"
                 android:text="圆形-边框"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_oval_dash_line"
@@ -54,7 +59,7 @@
                 android:gravity="center"
                 android:text="圆形-虚线"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -76,7 +81,7 @@
                 android:gravity="center"
                 android:text="圆角-填充"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_line_radius"
@@ -86,7 +91,7 @@
                 android:gravity="center"
                 android:text="圆角-边框"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_dash_line_radius"
@@ -96,7 +101,7 @@
                 android:gravity="center"
                 android:text="圆角-虚线"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -118,7 +123,7 @@
                 android:gravity="center"
                 android:text="圆角-填充"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
             <TextView
@@ -131,7 +136,7 @@
                 android:gravity="center"
                 android:text="圆角-边框"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -152,7 +157,7 @@
                 android:gravity="center"
                 android:text="触摸背景变色"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
             <Button
@@ -165,7 +170,7 @@
                 android:gravity="center"
                 android:text="触摸背景和字体变色"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
         </LinearLayout>
 
@@ -185,7 +190,7 @@
                 android:gravity="center"
                 android:text="点击事件可用背景颜色"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
             <Button
@@ -198,9 +203,10 @@
                 android:gravity="center"
                 android:text="点击事件背景和字体颜色"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -217,7 +223,7 @@
                 android:gravity="center"
                 android:text="上圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_bottom_radius"
@@ -227,11 +233,11 @@
                 android:gravity="center"
                 android:text="下圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
-
+                android:textSize="10sp" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -248,7 +254,7 @@
                 android:gravity="center"
                 android:text="斜对角圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_diagonal2"
@@ -258,7 +264,7 @@
                 android:gravity="center"
                 android:text="斜对角圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -280,7 +286,7 @@
                 android:gravity="center"
                 android:text="左上圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_tr_radius"
@@ -290,7 +296,7 @@
                 android:gravity="center"
                 android:text="右上圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -311,7 +317,7 @@
                 android:gravity="center"
                 android:text="左下圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_rect_br_radius"
@@ -321,7 +327,7 @@
                 android:gravity="center"
                 android:text="右下圆角"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -342,7 +348,7 @@
                 android:gravity="center"
                 android:text="线性渐变-上下"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_gradient_linear_bt"
@@ -352,7 +358,7 @@
                 android:gravity="center"
                 android:text="线性渐变-下上"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -373,7 +379,7 @@
                 android:gravity="center"
                 android:text="线性渐变-左右"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
             <TextView
@@ -384,7 +390,7 @@
                 android:gravity="center"
                 android:text="线性渐变-右左"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -405,7 +411,7 @@
                 android:gravity="center"
                 android:text="扫描渐变"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_gradient_radial"
@@ -415,7 +421,7 @@
                 android:gravity="center"
                 android:text="辐射渐变"
                 android:textColor="#000"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
 
 
         </LinearLayout>
@@ -423,5 +429,3 @@
     </LinearLayout>
 
 </ScrollView>
-
-

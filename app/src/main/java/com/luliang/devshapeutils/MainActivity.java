@@ -1,13 +1,12 @@
 package com.luliang.devshapeutils;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.luliang.shapeutils.DevShapeUtils;
-import com.luliang.shapeutils.selector.DevSelector;
 import com.luliang.shapeutils.shape.DevShape;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void initView() {
+        Button btn_databinding = findViewById(R.id.btn_databinding);
+        btn_databinding.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BindingActivity.class));
+            }
+        });
 
         //圆形
         TextView tv_oval_solid = findViewById(R.id.tv_oval_solid);
