@@ -35,7 +35,7 @@
                     android:textColor="#000"
                     android:textSize="10sp"
                     app:shape="@{`OVAL`}"
-                    app:solid="@{`#FF4081`}" />
+                    app:solid="@{`#89FF4081`}" />
 
                 <TextView
                     android:id="@+id/tv_oval_line"
