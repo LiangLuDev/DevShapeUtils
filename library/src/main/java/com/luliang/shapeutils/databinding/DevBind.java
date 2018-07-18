@@ -12,6 +12,8 @@ import com.luliang.shapeutils.R;
 import com.luliang.shapeutils.selector.DevSelector;
 import com.luliang.shapeutils.shape.DevShape;
 
+import java.util.Arrays;
+
 /**
  * 利用databinding在xml文件中设置样式
  */
@@ -127,7 +129,6 @@ public class DevBind {
     }
 
 
-
     /**
      * Selector设置-int色值 例：@color/color 类型颜色
      */
@@ -183,7 +184,6 @@ public class DevBind {
             throw new ExceptionInInitializerError("请先设置SelectorState！！！");
         }
     }
-
 
 
     /**
@@ -282,7 +282,7 @@ public class DevBind {
         //扫描渐变（仅支持 #FFFFFFF 类格式颜色设置）
         if (gradientSweepColors != null) {
             if (gradientSweepColors.contains("|")) {
-                String[] colors = "|".split(gradientSweepColors);
+                String[] colors = gradientSweepColors.split("\\|");
                 for (String color : colors) {
                     if (!color.contains("#"))
                         throw new ExceptionInInitializerError("错误的颜色格式,仅支持 #FFFFFFF 类格式颜色设置");
@@ -296,7 +296,7 @@ public class DevBind {
         //辐射渐变（仅支持 #FFFFFFF 类格式颜色设置）
         if (gradientRadialRadius > 0 && gradientRadialColors != null) {
             if (gradientRadialColors.contains("|")) {
-                String[] colors = "|".split(gradientRadialColors);
+                String[] colors = gradientRadialColors.split("\\|");
                 for (String color : colors) {
                     if (!color.contains("#"))
                         throw new ExceptionInInitializerError("错误的颜色格式,仅支持 #FFFFFFF 类格式颜色设置");
