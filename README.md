@@ -5,7 +5,7 @@
 
 
 ### 公告
-> 最开始的代码设置样式的雏形虽然很简便，然而还是会有些不方便的地方，有朋友也反馈这个问题。经过一段时间的整理和朋友的建议，终于支持XML设置样式了。可能会存在一下问题，请大家及时反馈。[XML设置文档](https://github.com/LiangLuDev/DevShapeUtils/blob/master/XML%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3.md)
+> 最开始的代码设置样式的雏形虽然很简便，然而还是会有些不方便的地方，有朋友也反馈这个问题。经过一段时间的整理和朋友的建议，**终于支持XML设置样式了** 。可能会存在一下问题，请大家及时反馈。[XML设置文档](https://github.com/LiangLuDev/DevShapeUtils/blob/master/XML%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3.md)
 
 ### 1、功能介绍
 -------------------
