@@ -1,6 +1,5 @@
 ### Selector状态详解
 > `Selector`状态使用方式和效果解释
-
 - **`DevSelector.STATE_PRESSED`：** 对应`android:state_pressed`,设置是否按压状态，一般在true时设置该属性，表示已按压状态，默认为false
 - **`DevSelector.STATE_ENABLED`：** 对应`android:state_enabled`,设置触摸或点击事件是否可用状态，一般只在false时设置该属性，表示不可用状态
 - **`DevSelector.STATE_SELECTED`：** 对应`android:state_selected`,设置是否选中状态，true表示已选中，false表示未选中
