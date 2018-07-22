@@ -28,19 +28,19 @@ public class DevBind {
     @BindingAdapter(value = {"shape", "solid", "line_width", "line_color",
             "dash_line_width", "dash_line_color", "dash_width", "dash_gap",
             "radius", "tr_radius", "tl_radius", "br_radius", "bl_radius",
-            "gradient_linear_orientation", "gradient_linear_start_color", "gradient_linear_end_color",
+            "gradient_linear_orientation", "gradient_linear_start_color", "gradient_linear_gravity_color","gradient_linear_end_color",
             "gradient_sweep_colors", "gradient_radial_radius", "gradient_radial_colors"},
             requireAll = false)
     public static void bindShape(View view, String shape, String solidColor, int lineWidth, String lineColor,
                                  int dashLineWidth, String dashLineColor, float dashWidth, float dashGap,
                                  float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
-                                 String gradientLinearOrientation, String gradientLinearStartColor, String gradientLinearEndColor,
+                                 String gradientLinearOrientation, String gradientLinearStartColor,String gradientLinearGravityColor, String gradientLinearEndColor,
                                  String gradientSweepColors, float gradientRadialRadius, String gradientRadialColors) {
 
         Drawable shapeDrawable = buildShape(shape, solidColor, lineWidth, lineColor,
                 dashLineWidth, dashLineColor, dashWidth, dashGap,
                 radius, trRadius, tlRadius, brRadius, blRadius,
-                gradientLinearOrientation, gradientLinearStartColor, gradientLinearEndColor,
+                gradientLinearOrientation, gradientLinearStartColor,gradientLinearGravityColor, gradientLinearEndColor,
                 gradientSweepColors, gradientRadialRadius, gradientRadialColors);
         //设置样式背景
         view.setBackground(shapeDrawable);
@@ -52,20 +52,20 @@ public class DevBind {
     @BindingAdapter(value = {"shape", "solid", "line_width", "line_color",
             "dash_line_width", "dash_line_color", "dash_width", "dash_gap",
             "radius", "tr_radius", "tl_radius", "br_radius", "bl_radius",
-            "gradient_linear_orientation", "gradient_linear_start_color", "gradient_linear_end_color",
+            "gradient_linear_orientation", "gradient_linear_start_color", "gradient_linear_gravity_color","gradient_linear_end_color",
             "gradient_sweep_colors", "gradient_radial_radius", "gradient_radial_colors"},
             requireAll = false)
     public static void bindShape(View view, String shape, int solidColor, int lineWidth, int lineColor,
                                  int dashLineWidth, int dashLineColor, float dashWidth, float dashGap,
                                  float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
-                                 String gradientLinearOrientation, int gradientLinearStartColor, int gradientLinearEndColor,
+                                 String gradientLinearOrientation, int gradientLinearStartColor,int gradientLinearGravityColor, int gradientLinearEndColor,
                                  String gradientSweepColors, float gradientRadialRadius, String gradientRadialColors) {
 
 
         Drawable shapeDrawable = buildShape(shape, solidColor, lineWidth, lineColor,
                 dashLineWidth, dashLineColor, dashWidth, dashGap,
                 radius, trRadius, tlRadius, brRadius, blRadius,
-                gradientLinearOrientation, gradientLinearStartColor, gradientLinearEndColor,
+                gradientLinearOrientation, gradientLinearStartColor, gradientLinearGravityColor,gradientLinearEndColor,
                 gradientSweepColors, gradientRadialRadius, gradientRadialColors);
 
         //设置样式背景
@@ -77,7 +77,7 @@ public class DevBind {
      */
     @BindingAdapter(value = {"shape", "radius", "tr_radius", "tl_radius", "br_radius", "bl_radius",
             "selector_pressed_color", "selector_pressed_normal_color", "selector_enable_color", "selector_enable_normal_color",
-            "selector_select_color", "selector_normal_color", "selector_state", "selector_select_text_color", "selector_normal_text_color"}, requireAll = false)
+            "selector_color", "selector_normal_color", "selector_state", "selector_text_color", "selector_normal_text_color"}, requireAll = false)
     public static void bindSelector(View view, String shape, float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
                                     String pressedColor, String pressedNormalColor, String enableColor, String enableNormalColor,
                                     String selectColor, String normalColor, String selectorState, String selectTextColor, String normalTextColor) {
@@ -87,30 +87,30 @@ public class DevBind {
 
         if (pressedColor != null && pressedNormalColor != null) {
             selectDrawable = buildShape(shape, pressedColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             normalDrawable = buildShape(shape, pressedNormalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             selectorState = "PRESSED";
         }
 
         if (enableColor != null && enableNormalColor != null) {
             selectDrawable = buildShape(shape, enableColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null,null, null, 0, null);
 
             normalDrawable = buildShape(shape, enableNormalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             selectorState = "ENABLED";
         }
 
         if (selectColor != null && normalColor != null) {
             selectDrawable = buildShape(shape, selectColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             normalDrawable = buildShape(shape, normalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null,null, null, 0, null);
 
         }
 
@@ -134,7 +134,7 @@ public class DevBind {
      */
     @BindingAdapter(value = {"shape", "radius", "tr_radius", "tl_radius", "br_radius", "bl_radius",
             "selector_pressed_color", "selector_pressed_normal_color", "selector_enable_color", "selector_enable_normal_color",
-            "selector_select_color", "selector_normal_color", "selector_state", "selector_select_text_color", "selector_normal_text_color"}, requireAll = false)
+            "selector_color", "selector_normal_color", "selector_state", "selector_select_text_color", "selector_normal_text_color"}, requireAll = false)
     public static void bindSelector(View view, String shape, float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
                                     int pressedColor, int pressedNormalColor, int enableColor, int enableNormalColor,
                                     int selectColor, int normalColor, String selectorState, int selectTextColor, int normalTextColor) {
@@ -144,30 +144,30 @@ public class DevBind {
 
         if (pressedColor != 0 && pressedNormalColor != 0) {
             selectDrawable = buildShape(shape, pressedColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             normalDrawable = buildShape(shape, pressedNormalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             selectorState = "PRESSED";
         }
 
         if (enableColor != 0 && enableNormalColor != 0) {
             selectDrawable = buildShape(shape, enableColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null,null, null, 0, null);
 
             normalDrawable = buildShape(shape, enableNormalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             selectorState = "ENABLED";
         }
 
         if (selectColor != 0 && normalColor != 0) {
             selectDrawable = buildShape(shape, selectColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null,null, null, null, 0, null);
 
             normalDrawable = buildShape(shape, normalColor, 0, null, 0, null, 0, 0,
-                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null, null, 0, null);
+                    radius, trRadius, tlRadius, brRadius, blRadius, null, null, null,null, null, 0, null);
 
         }
 
@@ -194,7 +194,7 @@ public class DevBind {
     private static Drawable buildShape(String shape, Object solidColor, int lineWidth, Object lineColor,
                                        int dashLineWidth, Object dashLineColor, float dashWidth, float dashGap,
                                        float radius, float trRadius, float tlRadius, float brRadius, float blRadius,
-                                       String gradientLinearOrientation, Object gradientLinearStartColor, Object gradientLinearEndColor,
+                                       String gradientLinearOrientation, Object gradientLinearStartColor,Object gradientLinearGravityColor, Object gradientLinearEndColor,
                                        String gradientSweepColors, float gradientRadialRadius, String gradientRadialColors) {
         //样式设置（圆形或者矩形）
         int shapeModel;
@@ -273,9 +273,17 @@ public class DevBind {
         if (isEmpty(gradientLinearStartColor) && isEmpty(gradientLinearEndColor)) {
             devShape.orientation(gradientLinearOrientation);
             if (isStrColor(gradientLinearStartColor) && isStrColor(gradientLinearEndColor)) {
-                devShape.gradientLinear(gradientLinearStartColor.toString(), gradientLinearEndColor.toString());
+                if (isEmpty(gradientLinearGravityColor)) {
+                    devShape.gradientLinear(gradientLinearStartColor.toString(),gradientLinearGravityColor.toString(), gradientLinearEndColor.toString());
+                }else {
+                    devShape.gradientLinear(gradientLinearStartColor.toString(), gradientLinearEndColor.toString());
+                }
             } else {
-                devShape.bindGradientLinear((Integer) gradientLinearStartColor, (Integer) gradientLinearEndColor);
+                if (isEmpty(gradientLinearGravityColor)) {
+                    devShape.bindGradientLinear((Integer) gradientLinearStartColor, (Integer) gradientLinearGravityColor, (Integer) gradientLinearEndColor);
+                }else {
+                    devShape.bindGradientLinear((Integer) gradientLinearStartColor, (Integer) gradientLinearEndColor);
+                }
             }
         }
 

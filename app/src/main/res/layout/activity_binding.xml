@@ -485,11 +485,11 @@
                     android:text="扫描渐变"
                     android:textColor="#000"
                     android:textSize="10sp"
-                    app:gradient_sweep_colors="@{`#FF4081|#3F51B5|#cccccc`}"
+                    app:gradient_sweep_colors="@{`#FF4081|#3F51B5|#CCCCCC`}"
                     app:shape="@{`OVAL`}" />
 
                 <TextView
-                    app:gradient_radial_colors="@{`#FF4081|#3F51B5|#cccccc`}"
+                    app:gradient_radial_colors="@{`#FF4081|#3F51B5|#CCCCCC`}"
                     app:shape="@{`OVAL`}"
                     app:gradient_radial_radius="@{30}"
                     android:id="@+id/tv_gradient_radial"
