@@ -1,4 +1,3 @@
-
 ### XML设置Shape、Selector
 > 在xml布局中设置样式我使用Databinding进行关联设置，现在MVVM架构的已经很流行，Databinding作为Android端MVVM架构的主力军，如果你还不了解，就有点落后。[Databinding了解一下？](https://blog.csdn.net/u013005791/article/details/78905401#studio_support) 
 >

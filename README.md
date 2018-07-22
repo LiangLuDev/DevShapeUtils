@@ -5,7 +5,7 @@
 
 
 ### 公告
-> 最开始的代码设置样式的雏形虽然很简便，然而还是会有些不方便的地方，有朋友也反馈这个问题。经过一段时间的整理和朋友的建议，终于支持XML设置样式了。可能会存在一下问题，请大家及时反馈。[XML设置文档]()
+> 最开始的代码设置样式的雏形虽然很简便，然而还是会有些不方便的地方，有朋友也反馈这个问题。经过一段时间的整理和朋友的建议，终于支持XML设置样式了。可能会存在一下问题，请大家及时反馈。[XML设置文档](https://github.com/LiangLuDev/DevShapeUtils/blob/master/XML%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3.md)
 
 ### 1、功能介绍
 -------------------
@@ -52,12 +52,12 @@ public class DevApplication extends Application {
 
 
 #### 2.5 样式设置使用文档
-- [代码设置文档]()
-- [XML设置文档]()
+- [代码设置文档](https://github.com/LiangLuDev/DevShapeUtils/blob/master/%E4%BB%A3%E7%A0%81%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3.md)
+- [XML设置文档](https://github.com/LiangLuDev/DevShapeUtils/blob/master/XML%E8%AE%BE%E7%BD%AE%E6%96%87%E6%A1%A3.md)
 
 
 ### 3、更多功能
-[**更新日志**]()
+[**更新日志**](https://github.com/LiangLuDev/DevShapeUtils/blob/master/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97.md)
 
 > 由于用户反馈，后面该库会持续更新、完善、增加新的功能，尽量支持日常使用的所有场景，欢迎反馈。
 
