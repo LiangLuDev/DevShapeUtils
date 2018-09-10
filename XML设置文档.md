@@ -106,7 +106,7 @@ public class BindingAdapter extends RecyclerView.Adapter{
 ```
 设置`selector`部分属性（预览）
 
-![DevShapeUtils-Selector](./DevShapeUtils-Selector)
+![DevShapeUtils-Selector](./DevShapeUtils-Selector.gif)
 
 ```
 
