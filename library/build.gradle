@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 def mavenVersionCode = 4
 def mavenVersionName = "1.1.0"
@@ -32,6 +33,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:26.1.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 //上传JCenter使用
@@ -51,6 +53,9 @@ tasks.withType(Javadoc) {//防止编码问题
     options.addStringOption('Xdoclint:none', '-quiet')
     options.addStringOption('encoding', 'UTF-8')
     options.addStringOption('charSet', 'UTF-8')
+}
+repositories {
+    mavenCentral()
 }
 //打包上传到JCenter命令
 //gradlew clean build bintrayUpload -PbintrayUser=luliangdev -PbintrayKey=xxxxxxxxxxxxxxxxxxxxx -PdryRun=false
