@@ -65,6 +65,7 @@ public class DevApplication extends Application {
 - 增加Shape的另外两种类型Line和Ring
 - 背景支持图片
 - 样式支持阴影（阴影颜色根据背景颜色）
+- 水波纹效果设置
 
 
 ### 4、意见反馈
